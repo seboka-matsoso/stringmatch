@@ -12,7 +12,7 @@ namespace stringmatch.Controllers
         
         public IActionResult Index(string phrase)
         {
-            this.Title = "Simple String Match Application";
+            this.Title = "String Match Application";
             
 
             if (!String.IsNullOrEmpty(phrase))
@@ -26,7 +26,7 @@ namespace stringmatch.Controllers
                 ViewData["o"] = data[3];
                 ViewData["u"] = data[4];
             }
-            return View();
+            return View("Index");
         }
         //Summary//
         //A function that handles the string input and returns the indecies of all vowels in the string phrase. 
@@ -73,7 +73,7 @@ namespace stringmatch.Controllers
                 else
                 {
                     pos++;
-                    //Sanitize output and get it ready to be returned
+                    //Sanitize output and get it ready to be returned back to calling context.
                     if(pos == (phrase.Length))
                     {
                         string firstVpos = "No Matches";
